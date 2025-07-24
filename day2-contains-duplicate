@@ -1,0 +1,12 @@
+class Solution:
+    def containsDuplicate(self, nums: List[int]) -> bool:
+        hashmap = dict()
+
+        #only need to loop through the array once so a while loop isnt needed
+        for index in range(len(nums)):
+            currentNum = nums[index]
+            if currentNum in hashmap:
+                return True
+            hashmap[currentNum] = True
+        return False
+        
