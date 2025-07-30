@@ -1,0 +1,11 @@
+class Solution:
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        grouped_strs = dict()
+        
+        for str in strs:
+            sorted_tuple_key = tuple(sorted(str))
+            if sorted_tuple_key in grouped_strs:
+                grouped_strs[sorted_tuple_key].append(str)
+            if sorted_tuple_key not in grouped_strs:
+                grouped_strs[sorted_tuple_key] = [str]
+        return list(grouped_strs.values())
